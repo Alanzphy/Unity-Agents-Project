@@ -1,0 +1,27 @@
+# Install once per clone:  pre-commit install --hook-type pre-commit --hook-type commit-msg
+default_install_hook_types: [pre-commit, commit-msg]
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^unity/.*\.(unity|prefab|asset|meta|mat|anim|controller|physicMaterial)$|\.md$
+      - id: end-of-file-fixer
+        exclude: ^unity/.*\.(unity|prefab|asset|meta|mat|anim|controller|physicMaterial)$
+      - id: check-yaml
+        exclude: ^unity/
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.3
+    hooks:
+      - id: ruff-check
+        args: ["--fix"]
+      - id: ruff-format
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.5.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]

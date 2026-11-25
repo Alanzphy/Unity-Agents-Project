@@ -1,0 +1,11 @@
+# Each folder is reviewed by its owners. Branch protection on main should require
+# "Review from Code Owners" (Settings > Branches).
+# TODO: replace the placeholders with real GitHub usernames (with the @ prefix) and uncomment.
+
+*                @Alanzphy
+
+# /unity/        <eliab-github-user> <fabian-github-user>
+# /agents/       <mirka-github-user>
+/vision/         @Alanzphy
+# /vision/       <ari-github-user>
+# /docs/api.md   <all component owners>
