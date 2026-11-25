@@ -4,8 +4,15 @@
 
 ## Git
 
-- `main` is protected: changes only through PRs with CI green and review from the folder owner
-  (`.github/CODEOWNERS`).
+- `main` is protected (ruleset "main: PR + CI (fast)"): no direct pushes, force pushes or
+  deletion; changes only through PRs whose CI checks are green. **No approval is required**: the
+  author merges their own PR once CI passes.
+- `.github/CODEOWNERS` automatically requests a review from the folder owner. Reviewing is
+  encouraged, mandatory only by team agreement: changes to `docs/api.md`, `requirements.*` or
+  `.github/` should wait for one teammate's approval.
+- Merging: squash only (the PR title becomes the commit message, so it must be a Conventional
+  Commit). Enable auto-merge on your PR (`gh pr merge --auto --squash`) and it merges itself when
+  CI passes; the branch is deleted after merge.
 - Branches: `<area>/<short-topic>` — areas: `unity`, `agents`, `vision`, `api`, `docs`, `ci`, `repo`.
   Example: `vision/openvino-export`.
 - Commits: [Conventional Commits](https://www.conventionalcommits.org/):
