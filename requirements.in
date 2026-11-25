@@ -1,6 +1,10 @@
 # Direct dependencies (one shared venv, Python 3.12). Edit this file, then regenerate the lock:
 #   uv pip compile requirements.in --universal --python-version 3.12 -o requirements.txt
+# uv keeps the existing pins in requirements.txt and only resolves what changed.
 # Changing a pin requires an ADR (docs/decisions/).
 agentpy
 openvino
 ultralytics
+# HTTP API for Unity (ADR 0007)
+fastapi
+uvicorn[standard]

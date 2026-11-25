@@ -80,5 +80,6 @@ On a scene/prefab conflict run `git mergetool`.
 
 > Pending: `server.py` and the Unity bridge are not implemented yet.
 
-1. Terminal: activate `.venv`, run `python server.py` (listens on `127.0.0.1:8000`).
+1. Terminal: activate `.venv`, run `uvicorn server:app --reload` (listens on `127.0.0.1:8000`;
+   try the API without Unity at `http://127.0.0.1:8000/docs`).
 2. Unity: open `unity/`, open the main scene, press Play.

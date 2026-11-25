@@ -8,7 +8,8 @@
 - HTTP/1.1 + JSON, `server.py` listens on `http://127.0.0.1:8000` (configurable).
 - Unity is the client and the clock (ADR 0003): one `POST /step` per tick (default 0.5 s).
 - Frames: JPEG 640x480, base64 in JSON, one per drone per tick (ADR 0004).
-- Server framework: not decided yet (Flask or FastAPI); the contract does not depend on it.
+- Server: FastAPI + uvicorn (ADR 0007). Pydantic models mirror this file; interactive docs at
+  `http://127.0.0.1:8000/docs`.
 
 ## Conventions
 
@@ -16,7 +17,7 @@
 - Rotations: quaternions `[x, y, z, w]`.
 - Ids: strings, drones `mav-1`, `mav-2`, ...; people `person-1`, ...
 - Time: `sim_time` in seconds since mission start; `tick` integer starting at 0.
-- Unknown fields must be ignored (forward compatible). Missing required fields -> HTTP 400.
+- Unknown fields must be ignored (forward compatible). Missing or invalid fields -> HTTP 422.
 
 ## `POST /mission`
 
@@ -127,6 +128,6 @@ is not flat, Unity could add a depth value per detection later (contract change)
 
 | Code | When |
 |---|---|
-| 400 | Invalid JSON or missing required field (body: `{"error": "..."}`) |
+| 422 | Invalid JSON or missing/invalid field (FastAPI validation error body) |
 | 409 | `mission_id` does not match the running mission |
 | 500 | Server error; Unity keeps the last commands and retries next tick |

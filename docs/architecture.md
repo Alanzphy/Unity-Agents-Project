@@ -40,7 +40,7 @@ flowchart LR
 | Unity | World, people, physics, collisions, camera rendering, applying commands, visualization | Decide where drones go |
 | AgentPy model | Mission, zone assignment, MAV decisions, consensus, termination | Physics or rendering |
 | Vision | Person detection + matching against the description, per MAV | Movement decisions |
-| `server.py` | Single entry point: HTTP API, decodes frames, calls `model.step()` | Business logic |
+| `server.py` | Single entry point: FastAPI app (ADR 0007), decodes frames, calls `model.step()` | Business logic |
 
 ## Tick model (ADR 0003)
 

@@ -26,5 +26,6 @@ change a decision).
 | [0004](decisions/0004-vision-node-per-mav.md) | One VisionNode per MAV sharing one compiled model |
 | [0005](decisions/0005-python-version.md) | Python 3.12, one venv, exact pins |
 | [0006](decisions/0006-unity-git-settings.md) | Unity text serialization, meta files, LFS, smart merge |
+| [0007](decisions/0007-fastapi.md) | FastAPI + uvicorn for the Python API |
 
 New decision: copy the structure of an existing ADR, next number, short and in English.
