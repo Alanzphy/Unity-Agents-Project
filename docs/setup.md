@@ -1,12 +1,12 @@
 # Setup
 
-> Status: **Agreed** (exact Unity patch pending: Eliab fills it in after installing)
+> Status: **Agreed**
 
 ## Versions (everyone uses exactly these)
 
 | Tool | Version | Why |
 |---|---|---|
-| Unity | **6 LTS — `6000.x.yfz` (TODO: exact patch)** | ADR 0002 |
+| Unity | **6.3 LTS — `6000.3.29f1`** (source of truth: `unity/ProjectSettings/ProjectVersion.txt`) | ADR 0002 |
 | Python | **3.12** (`.python-version`) | ADR 0005 |
 | Python deps | exact pins in `requirements.txt` | ADR 0005 |
 | Git LFS | any recent | binaries (ADR 0006) |
