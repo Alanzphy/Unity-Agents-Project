@@ -9,7 +9,7 @@
 | [api.md](api.md) | Unity <-> Python message contract | Draft |
 | [data-model.md](data-model.md) | Shared entities and fields | Draft |
 | [conventions.md](conventions.md) | Branches, commits, code style, Unity rules | Agreed |
-| [setup.md](setup.md) | Versions, install and run | Agreed (Unity patch pending) |
+| [setup.md](setup.md) | Versions, install and run | Agreed |
 | [decisions/](decisions/) | Architecture Decision Records (ADRs) | — |
 
 **Draft** = proposal written from the challenge text and the decisions taken; the team reviews and
@@ -21,7 +21,7 @@ change a decision).
 | # | Decision |
 |---|---|
 | [0001](decisions/0001-monorepo.md) | One monorepo, one folder per component |
-| [0002](decisions/0002-unity-version.md) | Latest Unity 6 LTS, exact patch for everyone |
+| [0002](decisions/0002-unity-version.md) | Unity 6.3 LTS (`6000.3.29f1`), exact patch for everyone |
 | [0003](decisions/0003-unity-owns-time.md) | Unity owns simulation time; Python is called per tick |
 | [0004](decisions/0004-vision-node-per-mav.md) | One VisionNode per MAV sharing one compiled model |
 | [0005](decisions/0005-python-version.md) | Python 3.12, one venv, exact pins |

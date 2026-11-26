@@ -1,6 +1,6 @@
-# 0002 — Latest Unity 6 LTS, exact patch for everyone
+# 0002 — Unity 6.3 LTS, exact patch for everyone
 
-- Status: Accepted (exact patch pending)
+- Status: Accepted
 - Date: 2026-11-24
 
 ## Context
@@ -10,13 +10,15 @@ producing huge diffs and broken scenes or packages.
 
 ## Decision
 
-Use the latest **Unity 6 LTS** available in Unity Hub. Everyone installs the **same exact patch**
-(e.g. `6000.x.yfz`), recorded in `docs/setup.md` and in `unity/ProjectSettings/ProjectVersion.txt`.
+Use **Unity 6.3 LTS, patch `6000.3.29f1`** (latest 6.3 LTS patch on 2026-11-25). Everyone
+installs this exact patch. It is recorded in `docs/setup.md` and, once the project exists, in
+`unity/ProjectSettings/ProjectVersion.txt`, which is the source of truth.
 
 ## Consequences
 
 - Upgrading the editor requires a new ADR and is done by one person in its own PR.
-- TODO: Eliab records the exact patch after installing.
+- If the project is created with a different 6.3 patch, update this ADR and `docs/setup.md` to
+  match `ProjectVersion.txt` in the same PR.
 
 ## Rejected alternatives
 
